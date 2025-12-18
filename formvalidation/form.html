@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form Validation</title>
+</head>
+<body>
+  <h2>Registration Form</h2>
+
+  <form onsubmit="return validateForm()">
+    <label>Name:</label>
+    <input type="text" id="name"><br><br>
+
+    <label>Email:</label>
+    <input type="text" id="email"><br><br>
+
+    <label>Password:</label>
+    <input type="password" id="password"><br><br>
+
+    <label>Confirm Password:</label>
+    <input type="password" id="confirmPassword"><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    function validateForm() {
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let password = document.getElementById("password").value;
+      let confirmPassword = document.getElementById("confirmPassword").value;
+
+      // Name check
+      if (name === "") {
+        alert("Name is required");
+        return false;
+      }
+
+      // Email check (very basic)
+      if (email === "" || !email.includes("@")) {
+        alert("Enter a valid email");
+        return false;
+      }
+
+      // Password check
+      if (password.length < 6) {
+        alert("Password must be at least 6 characters");
+        return false;
+      }
+
+      // Confirm password check
+      if (password !== confirmPassword) {
+        alert("Passwords do not match");
+        return false;
+      }
+
+      alert("Form submitted successfully!");
+      return true;
+    }
+  </script>
+    
+</body>
+</html>

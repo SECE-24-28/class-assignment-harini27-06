@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display:flex;
+            justify-content: center;
+        }
+        #animation,
+        #transition{
+            margin:1rem;
+            width:100px;
+            height:100px;
+            background-color: rgb(185, 43, 67);
+        }
+        #animation{
+            animation-name: colorchange;
+            animation-duration: 1000ms;
+        }
+        #transition{
+            transition-property: width;
+            transition-duration:5000ms ;
+            transition-timing-function: ease-in-out;
+        }
+        #transition.hover{
+            width: 300px;
+
+        }
+        @keyframes colorchange{
+            from{
+                background-color:rgb(185, 43, 67) ;
+            }
+            to{
+                background-color: peru;
+            }
+        }
+        @media(min-width:400px){
+            #transition{
+                background-color: blueviolet;
+            }
+        }
+        @media(min-width:700px){
+            #transition{
+                background-color: rgb(26, 190, 40);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="animation"></div>
+    <div id="transition"></div>
+</body>
+</html>
